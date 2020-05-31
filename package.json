@@ -5,6 +5,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
+    "deploy": "npx sequelize db:drop && npx sequelize db:create && node sync.js && npm run seed && node server.js",
+    "seed": "npx sequelize db:seed:all",
     "watch": "nodemon server.js"
   },
   "author": "",
@@ -18,6 +20,7 @@
     "sequelize": "^5.21.10",
     "sequelize-cli": "^5.5.1"
   },
-  "devDependencies": {},
-  "description": ""
+  "devDependencies": {
+    "sequelize-cli": "^5.5.1"
+  }
 }
